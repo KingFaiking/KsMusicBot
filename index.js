@@ -32,7 +32,7 @@ let regVol = /^(?:([1][0-9][0-9])|200|([1-9][0-9])|([0-9]))$/; // RegEx for volu
 let youtubeSearched = false; // If youtube has been searched (for !add command)
 let selectUser; // Selecting user from guild
 
-bot.on("ready", async () => {
+client.on("ready", async () => {
 	console.log(`Bot is ready! ${bot.user.username}`);
 
 	/*try {
@@ -44,7 +44,7 @@ bot.on("ready", async () => {
 
 });
 
-bot.on("message", async message => {
+client.on("message", async message => {
 	if (message.author.bot) return;
 	if (message.channel.type === "dm") return;
 
@@ -390,4 +390,4 @@ function shuffle(queue) {
 /* MISC FUNCTIONS END */
 /*-------------------*/
 
-bot.login(botSettings.token);
+client.login(process.env.BOT_TOKEN);
