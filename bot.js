@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({disableEveryone: true})
-const Music = require('discord.js-musicbot-addon');
 client.login(process.env.BOT_TOKEN);
 client.on('ready', ()=> {
     console.log('Ready!')
