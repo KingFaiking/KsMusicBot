@@ -351,4 +351,14 @@ client.on('message', message => {
 }
 });
 
+    client.on('message', message => {
+    if(message.content.startsWith(prefix+'help')) {
+          const embed = new Discord.RichEmbed() 
+              .setColor("Random")
+        message.channel.sendMessage(embed);
+        message.author.sendEmbed(embed)
+        message.reply('كل الهلب بلخاص يقمر')
+        }
+        });
+
 client.login(process.env.BOT_TOKEN);
