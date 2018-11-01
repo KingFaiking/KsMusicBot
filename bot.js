@@ -313,33 +313,42 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content === 'help') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (!)**')
-        .addField('play', 'لتشغيل اغنية')
-        .addField('join', 'دخول رومك الصوتي')
-        .addField('disconnect', 'الخروج من رومك الصوتي')
-        .addField('skip', 'تخطي الأغنية')
-        .addField('pause', 'ايقاف الاغنية مؤقتا')
-        .addField('resume', 'تكملة الاغنية')
-        .addField('queue', 'اظهار قائمة التشغيل')
-        .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('(general_commands) لاظهار الاوامر العامة')
-      message.channel.send(helpEmbed);
-    }
+    if(message.content.startsWith(prefix+'help')) {
+   const embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+        .setDescription(`**
+
+**أوامر الميوزك...**
+**برفكس البوت ( ${prefix} )**
+'${prefix}play', 'لتشغيل اغنية')
+'${Prefix}join', 'دخول رومك الصوتي')
+'${Prefix}disconnect', 'الخروج من رومك الصوتي')
+'${Prefix}skip', 'تخطي الأغنية')
+'${Prefix}pause', 'ايقاف الاغنية مؤقتا')
+'${Prefix}resume', 'تكملة الاغنية')
+'${Prefix}queue', 'اظهار قائمة التشغيل')
+'${Prefix}np', 'اظهار الاغنية اللي انت مشغلها حاليا')
+
+        `)
+    message.author.send(embed)
+}
 });
 
 client.on('message', message => {
-    if (message.content === 'general_commands') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر عامة...**')
-        .addField('avatar', "افاتار الشخص المطلوب")
-        .addField('gif', 'البحث عن جيف انت تطلبه')
-        .addField('ping', 'معرفة ping البوت')
-        .setFooter('المزيد قريبا ان شاء الله!')
-      message.channel.send(helpEmbed);
-    }
+    if(message.content.startsWith(prefix+'help')) {
+   const embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+        .setDescription(`**
+
+**أوامر عامة...**
+'${Prefix}avatar', "افاتار الشخص المطلوب")
+'${Prefix}gif', 'البحث عن جيف انت تطلبه')
+'${Prefix}ping', 'معرفة ping البوت')
+       ('المزيد قريبا ان شاء الله!')
+
+        `)
+    message.author.send(embed)
+}
 });
 
 client.login(process.env.BOT_TOKEN);
